@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>StockTracker</title>
+    <title>Stock Tracker</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,7 +12,9 @@
 
   <body>
     <%= render 'layouts/navbar' %>
-    <%= render 'layouts/messages' %>
-    <%= yield %>
+    <div class="container">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </div>
   </body>
 </html>
