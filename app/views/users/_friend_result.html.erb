@@ -1,0 +1,19 @@
+<div class="reults-block">
+  <%= render 'layouts/messages' %>
+</div>
+
+<% if @friends %>
+  <% @friends.each do |friend| %>
+    <div class="card-header mt-3">
+      <strong>Name: </strong><%= friend.full_name %> /
+      <strong>Email: </strong><%= friend.email %>
+      <% if current_user.not_friends_with?(friend.id) %>
+        <%= link_to 'Follow', '#', class: "btn btn-sm btn-success", method: :post %>
+      <% else %>
+        <span class="badge rounded-pill bg-secondary">
+          You are already friends
+        </span>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

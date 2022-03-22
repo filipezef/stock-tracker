@@ -1,0 +1,22 @@
+<div class="row mt-3">
+  <div class="col-sm-9">
+    <table class="table table-boardered table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @my_friends.each do |friend| %>
+          <tr>
+            <th scope="row"><%= friend.full_name %></th>
+            <td><%= friend.email %></td>
+            <td><%= link_to 'Follow', '#', method: :post, class: "btn btn-sm btn-success" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
