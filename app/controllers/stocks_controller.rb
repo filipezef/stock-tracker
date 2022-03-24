@@ -24,11 +24,15 @@ class StocksController < ApplicationController
   end
 
   def update
-    current_user.stocks.each do |stock|
-      stock.last_price = Stock.new_lookup(stock.ticker).last_price
-      stock.save
+    if !current_user.stocks.empty?
+      current_user.stocks.each do |stock|
+        stock.last_price = Stock.new_lookup(stock.ticker).last_price
+        stock.save
+      end
+      flash[:notice] = 'Stocks updated successfylly'
+    else
+      flash[:notice] = 'No stocks tracked'
     end
-    flash[:notice] = 'Stocks updated successfylly'
     redirect_to my_portfolio_path
   end
 end
