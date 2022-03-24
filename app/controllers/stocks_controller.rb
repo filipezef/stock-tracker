@@ -22,4 +22,13 @@ class StocksController < ApplicationController
       end
     end
   end
+
+  def update
+    current_user.stocks.each do |stock|
+      stock.last_price = Stock.new_lookup(stock.ticker).last_price
+      stock.save
+    end
+    flash[:notice] = 'Stocks updated successfylly'
+    redirect_to my_portfolio_path
+  end
 end

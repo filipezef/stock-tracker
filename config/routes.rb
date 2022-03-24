@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   ########## Stocks controller ##########
   get 'search_stock', to: 'stocks#search'
+  get 'update_stocks', to: 'stocks#update'
 
   ########## Users controller ##########
   get 'my_portfolio', to: 'users#my_portfolio'
