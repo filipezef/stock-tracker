@@ -29,3 +29,9 @@
   margin-top: 3.5%;
   padding-right: 5px;
 }
+
+/* #################### Sessions/Devise #################### */
+#session-brackground {
+  background: url(asset_path('devise/jeffrey-blum-unsplash.jpg')) no-repeat center center fixed;
+  background-size: cover;
+}
