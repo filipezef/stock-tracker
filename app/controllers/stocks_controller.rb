@@ -15,7 +15,7 @@ class StocksController < ApplicationController
       else
         respond_to do |format|
           flash.now[:alert] = 'Please enter a valid symbol'
-          format.js { render partial: 'users/sotck_result' }
+          format.js { render partial: 'users/stock_result' }
         end
       end
     else
@@ -36,6 +36,6 @@ class StocksController < ApplicationController
     else
       flash[:notice] = 'No stocks tracked'
     end
-    redirect_to my_portfolio_path
+    redirect_to root_path
   end
 end

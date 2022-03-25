@@ -1,8 +1,6 @@
-<%= link_to 'Update stocks prices', update_stocks_path, class: "btn btn-sm btn-info" %>
-
-<div class="row mt-3">
+<div class="row justify-content-center mt-3">
   <div class="col-sm-9">
-    <table class="table table-boardered table-hover">
+    <table class="table table-boardered table-hover text-white">
       <thead>
         <tr>
           <th scope="col">Ticker</th>
@@ -23,4 +21,8 @@
       </tbody>
     </table>
   </div>
+</div>
+
+<div class="text-center my-5">
+  <%= link_to 'Update stocks prices', update_stocks_path, class: "btn btn-info" %>
 </div>

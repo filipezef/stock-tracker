@@ -23,12 +23,19 @@
 */
 
 .logout-button {
-  margin-right: 5px;
+  margin-right: 100px;
 }
 .user-name{
   margin-top: 3.5%;
   padding-right: 5px;
 }
+
+/* #################### Application layout #################### */
+.stock-tracking-body{
+  background: url(asset_path('devise/nick-chong-unsplash.jpg')) no-repeat center center fixed;
+  background-size: cover;
+}
+
 
 /* #################### Sessions/Devise #################### */
 #session-brackground {

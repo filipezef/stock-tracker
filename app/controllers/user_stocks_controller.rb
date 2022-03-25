@@ -10,12 +10,12 @@ class UserStocksController < ApplicationController
     end
     UserStock.create(user_id: current_user.id, stock_id: stock.id)
     flash[:notice] = "Stock #{stock.name} added to your portfolio"
-    redirect_to my_portfolio_path
+    redirect_to root_path
   end
 
   def destroy
     UserStock.find_by(user_id: current_user.id, stock_id: params[:id]).destroy
     flash[:notice] = "Stock #{Stock.find(params[:id]).name} removed successfully"
-    redirect_to my_portfolio_path
+    redirect_to root_path
   end
 end
