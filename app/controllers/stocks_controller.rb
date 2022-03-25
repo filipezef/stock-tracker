@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Stock model controller, model manages API calls
 class StocksController < ApplicationController
   def search
     if params[:stock].present?
@@ -29,7 +32,7 @@ class StocksController < ApplicationController
         stock.last_price = Stock.new_lookup(stock.ticker).last_price
         stock.save
       end
-      flash[:notice] = 'Stocks updated successfylly'
+      flash[:notice] = 'Stocks updated successfully'
     else
       flash[:notice] = 'No stocks tracked'
     end

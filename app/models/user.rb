@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# User model
 class User < ApplicationRecord
   has_many :user_stocks
   has_many :stocks, through: :user_stocks

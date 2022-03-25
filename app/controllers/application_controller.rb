@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
+# Authentication required for app access, additional features for devise (fist_name and last_name)
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
-  
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   protected

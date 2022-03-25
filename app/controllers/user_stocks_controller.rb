@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Manages the many-to-many associations between user and stock models
 class UserStocksController < ApplicationController
   def create
     stock = Stock.check_db(params[:ticker])

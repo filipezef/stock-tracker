@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link <%= 'active' if request.path == my_portfolio_path %>" href="/my_portfolio">My Portfolio</a>
+            <a class="nav-link <%= 'active' if request.path == root_path %>" href="/">My Portfolio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link <%= 'active' if request.path == my_friends_path %>" href="/my_friends">My Friends</a>
@@ -21,9 +21,9 @@
               <li><%= link_to edit_user_registration_path, class: "dropdown-item" do %>
                 <%= fa_icon 'edit' %> Edit profile
               <% end %></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><%= link_to user_path(current_user), class: "dropdown-item" do %>
+                <%= fa_icon 'user' %> View profile
+              <% end %></li>
             </ul>
           </li>
         </ul>
@@ -35,10 +35,6 @@
             <%= link_to('Logout', destroy_user_session_path, class: "btn btn-danger logout-button", method: :delete) %>
           </li>
         </ul>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
       </div>
     <% end %>
   </div>

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# User model related methods (UI)
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
@@ -29,7 +32,7 @@ class UsersController < ApplicationController
       end
     else
       respond_to do |format|
-        flash.now[:alert] = "Please enter a name or email"
+        flash.now[:alert] = 'Please enter a name or email'
         format.js { render partial: 'users/friend_result' }
       end
     end

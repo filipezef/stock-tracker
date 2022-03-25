@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# User model self-referential methods
 class FriendshipsController < ApplicationController
   def create
     current_user.friends << User.find(params[:friend])
