@@ -26,16 +26,11 @@ class StocksController < ApplicationController
     end
   end
 
-  def update
-    if !current_user.stocks.empty?
-      current_user.stocks.each do |stock|
-        stock.last_price = Stock.new_lookup(stock.ticker).last_price
-        stock.save
-      end
-      flash[:notice] = 'Stocks updated successfully'
-    else
-      flash[:notice] = 'No stocks tracked'
-    end
+  def update_last_price
+    stock = Stock.find(params[:stock])
+    stock.last_price = Stock.new_lookup(stock.ticker).last_price
+    stock.save
+    flash[:notice] = 'Stocks updated successfully'
     redirect_to root_path
   end
 end

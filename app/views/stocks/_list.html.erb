@@ -15,14 +15,12 @@
             <th scope="row"><%= stock.ticker %></th>
             <td><%= stock.name %></td>
             <td><%= number_to_currency(stock.last_price) %></td>
-            <td><%= link_to 'Remove stock', user_stock_path(stock), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-sm btn-danger" %></td>
+            <td><%= link_to 'Update price', update_stock_last_price_path(stock: stock), method: :post,class: "btn btn-sm btn-info" %>
+              <%= link_to 'Remove stock', user_stock_path(stock), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-sm btn-danger" %>
+            </td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
-</div>
-
-<div class="text-center my-5">
-  <%= link_to 'Update stocks prices', update_stocks_path, class: "btn btn-info" %>
 </div>

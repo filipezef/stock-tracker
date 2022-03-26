@@ -35,10 +35,12 @@
             <%= link_to('Logout', destroy_user_session_path, class: "btn btn-danger logout-button", method: :delete) %>
           </li>
         </ul>
-        <%= form_tag search_stock_path, remote: true, method: :get, class: "d-flex" do %>
-          <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control no-right-padding" %>
-          <%= button_tag type: :submit, class: "btn btn-success px-3" do %>
-            <%= fa_icon 'search 1x' %>
+        <% if current_page?(root_path) %>
+          <%= form_tag search_stock_path, remote: true, method: :get, class: "d-flex" do %>
+            <%= text_field_tag :stock, params[:stock], placeholder: "Stock ticker symbol", autofocus: true, class: "form-control no-right-padding" %>
+            <%= button_tag type: :submit, class: "btn btn-success px-3" do %>
+              <%= fa_icon 'search 1x' %>
+            <% end %>
           <% end %>
         <% end %>
       </div>
