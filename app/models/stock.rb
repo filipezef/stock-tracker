@@ -11,7 +11,9 @@ class Stock < ApplicationRecord
       endpoint: 'https://sandbox.iexapis.com/v1'
     )
     begin
-      new(ticker: ticker_symbol, name: client.company(ticker_symbol).company_name, last_price: client.price(ticker_symbol))
+      new(ticker: ticker_symbol,
+          name: client.company(ticker_symbol).company_name,
+          last_price: client.price(ticker_symbol))
     rescue => exception
       # returns nil to the controller in case of error (invalid ticker_symbol),
       # so that a flash alert message is displayed
