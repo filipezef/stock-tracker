@@ -1,15 +1,9 @@
 @import 'bootstrap/dist/css/bootstrap';
 
-.search-area {
-  padding-top: 50px;
-}
-
 .no-right-padding {
   padding-right: 0 !important;
 }
-.no-left-padding {
-  padding-left: 0 !important;
-}
+
 .results-block {
   display: inline-block;
   margin-bottom: 1rem;
@@ -31,14 +25,18 @@
 }
 
 /* #################### Application layout #################### */
-.stock-tracking-body{
+.stock-tracking-body {
   background: url(asset_path('devise/nick-chong-unsplash.jpg')) no-repeat center center fixed;
   background-size: cover;
 }
 
+.stock-tracking-opacity {
+  background: rgba(158, 158, 179, 0.5);
 
-/* #################### Sessions/Devise #################### */
-#session-brackground {
+}
+
+/* #################### Devise layout #################### */
+.session-brackground {
   background: url(asset_path('devise/jeffrey-blum-unsplash.jpg')) no-repeat center center fixed;
   background-size: cover;
 }

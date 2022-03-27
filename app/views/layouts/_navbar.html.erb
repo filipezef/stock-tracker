@@ -28,11 +28,8 @@
           </li>
         </ul>
         <ul class="navbar-nav ml-auto mb-lg-0">
-          <li class="nav-item user-name text-light">
-            <%= fa_icon 'user' %> <%= current_user.full_name %>
-          </li>
           <li class="nav-item">
-            <%= link_to('Logout', destroy_user_session_path, class: "btn btn-danger logout-button", method: :delete) %>
+            <%= link_to('Logout', destroy_user_session_path, class: "btn btn-sm btn-danger logout-button", method: :delete) %>
           </li>
         </ul>
         <% if current_page?(root_path) %>
@@ -43,7 +40,16 @@
             <% end %>
           <% end %>
         <% end %>
+        <% if current_page?(my_friends_path) %>
+          <%= form_tag search_friend_path, remote: true, method: :get, class: "d-flex" do %>
+            <%= text_field_tag :friend, params[:friend], placeholder: "Enter the friend name or email", autofocus: true, class: "form-control no-right-padding" %>
+            <%= button_tag type: :submit, class: "btn btn-success px-3" do %>
+              <%= fa_icon 'search 1x' %>
+            <% end %>
+          <% end %>
+        <% end %>
       </div>
     <% end %>
   </div>
 </nav>
+

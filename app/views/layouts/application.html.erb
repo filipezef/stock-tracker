@@ -11,10 +11,12 @@
   </head>
 
   <body class="stock-tracking-body">
-    <%= render 'layouts/navbar' %>
-    <div class="container">
-      <%= render 'layouts/messages' %>
-      <%= yield %>
+    <div class="stock-tracking-opacity">
+      <%= render 'layouts/navbar' %>
+      <div class="container">
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
