@@ -1,23 +1,8 @@
 @import 'bootstrap/dist/css/bootstrap';
 
-.results-block {
-  display: inline-block;
-  margin-bottom: 1rem;
-}
-
-/* #################### Navbar #################### */
-.logout-button {
-  margin-right: 100px;
-}
-.user-name{
-  margin-top: 3.5%;
-  padding-right: 5px;
-}
-.no-right-padding {
-  padding-right: 0 !important;
-}
-
-/* #################### Application layout #################### */
+/* ################################################ */
+/* #################### Layouts ################### */
+/* ############# Application layout ############### */
 .stock-tracking-body {
   background: url(asset_path('devise/nick-chong-unsplash.jpg')) no-repeat center center fixed;
   background-size: cover;
@@ -32,4 +17,25 @@
 .session-brackground {
   background: url(asset_path('devise/jeffrey-blum-unsplash.jpg')) no-repeat center center fixed;
   background-size: cover;
+}
+
+
+/* #################### Navbar #################### */
+.logout-button {
+  margin-right: 100px;
+}
+.user-name{
+  margin-top: 3.5%;
+  padding-right: 5px;
+}
+.no-right-padding {
+  padding-right: 0 !important;
+}
+
+/* ################################################ */
+/* ################# Users views ################## */
+/* ############## Stock/User results ############## */
+.results-block {
+  display: inline-block;
+  margin-bottom: 1rem;
 }

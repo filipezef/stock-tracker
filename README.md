@@ -1,24 +1,29 @@
-# README
+# Stock tracker webapp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Resources: 
+<ul>
+  <li>User;</li>
+  <li>Stock;</li>
+  <li>Friendship;</li>
+  <li>User_stock.</li>
+</ul>
 
-Things you may want to cover:
+## Associations:
+<ul>
+  <li>Self referentia association (User);</li>
+  <li>Many-to-many beteeen users / stocks.</li>
+</ul>
 
-* Ruby version
+## Authentication: Devise;
 
-* System dependencies
+## Dependencies:
+<ul>
+  <li>Bootstrap 5.1 (Popper and Webpacker also required)</li>
+  <li>PostgreSQL (app is Heroku hosted, required for productino environment)</li>
+  <li>Devise</li>
+  <li>IEX Cloud API</li>
+  <li>Awesome icons</li>
+</ul>
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### App based on Rails 6 and ruby 2.7.4.1.
+### Hosted by heroku -> https://tracker-z.herokuapp.com//

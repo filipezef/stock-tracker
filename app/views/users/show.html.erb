@@ -1,15 +1,17 @@
 <div class="row justify-content-center">
   <div class="col-sm-6">
-    <h1 class="text-center my-5"><%= @user.full_name %></h1>
-    <div class="card card-header results-block">
+    <h1 class="text-center text-white my-5"><%= @user.full_name %></h1>
+    <div class="card card-header results-block text-white">
       <strong>Name: </strong><%= @user.full_name %>
       <strong>Email: </strong><%= @user.email %>
-      <% if current_user.not_friends_with?(@user.id) %>
+      <% if current_user.not_friends_with?(@user.id) && current_user != @user %>
         <%= link_to 'Follow?', friendships_path(friend: @user), class: "btn btn-xs btn-success", method: :post %>
       <% else %>
-        <span class="badge bg-secondary">
-          You are friends
-        </span>
+        <% if current_user != @user %>
+          <span class="badge bg-secondary">
+            You are friends
+          </span>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -17,13 +19,17 @@
   <% if !@my_friends.empty? %>
     <%= render 'friends/list' %>
   <% else %>
-    <p class="lead"><%= @user.full_name %> has no friends</p>
+    <div class="row">
+      <h3 class="text-center my-5"><%= @user.full_name %> has no friends</h3>
+    </div>
   <% end %>
 
   <% if !@tracked_stocks.empty? %>
     <%= render 'stocks/list' %>
   <% else %>
-    <p class="lead"><%= @user.full_name %> has no stocks</p>
+    <div class="row">
+      <h3 class="text-center my-5"><%= @user.full_name %> has no stocks</h3>
+    </div>
   <% end %>
   <div class="col text-center">
     <%= link_to 'Back', my_friends_path, class: "btn btn-primary mb-5" %>
